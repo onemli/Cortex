@@ -1,0 +1,291 @@
+{
+  "presets": {
+    "cortex-dark": {
+      "name": "Cortex Dark",
+      "type": "dark",
+      "bg": "#0f1014",
+      "bgSecondary": "#0d0e12",
+      "card": "#111317",
+      "cardHover": "#21242b",
+      "border": "#1e2027",
+      "borderHover": "#24262e",
+      "text": "#b1b1b1",
+      "textSecondary": "#6c7187",
+      "accent": "#d7a156",
+      "logoColor": "#e8e8e8"
+    },
+    "dracula": {
+      "name": "Dracula",
+      "type": "dark",
+      "bg": "#282a36",
+      "bgSecondary": "#21222c",
+      "card": "#343746",
+      "cardHover": "#3d3f4e",
+      "border": "#44475a",
+      "borderHover": "#6272a4",
+      "text": "#f8f8f2",
+      "textSecondary": "#6272a4",
+      "accent": "#bd93f9",
+      "logoColor": "#dddddd"
+    },
+    "nord": {
+      "name": "Nord",
+      "type": "dark",
+      "bg": "#2e3440",
+      "bgSecondary": "#3b4252",
+      "card": "#434c5e",
+      "cardHover": "#4c566a",
+      "border": "#4c566a",
+      "borderHover": "#5e81ac",
+      "text": "#eceff4",
+      "textSecondary": "#81a1c1",
+      "accent": "#88c0d0",
+      "logoColor": "#dddddd"
+    },
+    "one-night": {
+      "name": "One Night",
+      "type": "dark",
+      "bg": "#282c34",
+      "bgSecondary": "#21252b",
+      "card": "#2c313a",
+      "cardHover": "#373c47",
+      "border": "#3e4451",
+      "borderHover": "#4b5263",
+      "text": "#abb2bf",
+      "textSecondary": "#5c6370",
+      "accent": "#61afef",
+      "logoColor": "#dddddd"
+    },
+    "tokyo-night": {
+      "name": "Tokyo Night",
+      "type": "dark",
+      "bg": "#1a1b26",
+      "bgSecondary": "#16161e",
+      "card": "#24283b",
+      "cardHover": "#292e42",
+      "border": "#414868",
+      "borderHover": "#565f89",
+      "text": "#c0caf5",
+      "textSecondary": "#a9b1d6",
+      "accent": "#7aa2f7",
+      "logoColor": "#dddddd"
+    },
+    "github-dark": {
+      "name": "GitHub Dark",
+      "type": "dark",
+      "bg": "#0d1117",
+      "bgSecondary": "#161b22",
+      "card": "#21262d",
+      "cardHover": "#30363d",
+      "border": "#30363d",
+      "borderHover": "#484f58",
+      "text": "#c9d1d9",
+      "textSecondary": "#8b949e",
+      "accent": "#58a6ff",
+      "logoColor": "#dddddd"
+    },
+    "cortex-light": {
+      "name": "Cortex Light",
+      "type": "light",
+      "bg": "#f7f7f8",
+      "bgSecondary": "#ebeced",
+      "card": "#ffffff",
+      "cardHover": "#f3f4f5",
+      "border": "#d3d4d6",
+      "borderHover": "#b9babd",
+      "text": "#222222",
+      "textSecondary": "#60636b",
+      "accent": "#d7a156",
+      "logoColor": "#222222"
+    },
+    "github-light": {
+      "name": "GitHub Light",
+      "type": "light",
+      "bg": "#ffffff",
+      "bgSecondary": "#f6f8fa",
+      "card": "#ffffff",
+      "cardHover": "#f6f8fa",
+      "border": "#d0d7de",
+      "borderHover": "#a8b1bb",
+      "text": "#24292f",
+      "textSecondary": "#57606a",
+      "accent": "#0969da",
+      "logoColor": "#dddddd"
+    },
+    "solarized-light": {
+      "name": "Solarized Light",
+      "type": "light",
+      "bg": "#fdf6e3",
+      "bgSecondary": "#eee8d5",
+      "card": "#fdf6e3",
+      "cardHover": "#eee8d5",
+      "border": "#93a1a1",
+      "borderHover": "#657b83",
+      "text": "#586e75",
+      "textSecondary": "#839496",
+      "accent": "#268bd2"
+    },
+    "one-light": {
+      "name": "One Light",
+      "type": "light",
+      "bg": "#fafafa",
+      "bgSecondary": "#eaeaeb",
+      "card": "#fafafa",
+      "cardHover": "#eaeaeb",
+      "border": "#c8ccd0",
+      "borderHover": "#383a42",
+      "text": "#383a42",
+      "textSecondary": "#6a737d",
+      "accent": "#0184bc"
+    },
+    "nord-light": {
+      "name": "Nord Light",
+      "type": "light",
+      "bg": "#e5e9f0",
+      "bgSecondary": "#eceff4",
+      "card": "#eceff4",
+      "cardHover": "#d8dee9",
+      "border": "#d8dee9",
+      "borderHover": "#5e81ac",
+      "text": "#2e3440",
+      "textSecondary": "#4c566a",
+      "accent": "#5e81ac"
+    },
+    "catppuccin-latte": {
+      "name": "Catppuccin Latte",
+      "type": "light",
+      "bg": "#eff1f5",
+      "bgSecondary": "#e6e9ef",
+      "card": "#e6e9ef",
+      "cardHover": "#dce0e8",
+      "border": "#dce0e8",
+      "borderHover": "#4c4f69",
+      "text": "#4c4f69",
+      "textSecondary": "#6c6f85",
+      "accent": "#dc8a78"
+    },
+    "ayu-light": {
+      "name": "Ayu Light",
+      "type": "light",
+      "bg": "#fafafa",
+      "bgSecondary": "#f3f3f3",
+      "card": "#fafafa",
+      "cardHover": "#f3f3f3",
+      "border": "#e0e0e0",
+      "borderHover": "#202734",
+      "text": "#202734",
+      "textSecondary": "#5c6773",
+      "accent": "#55b4d4"
+    }
+  },
+  "tagColors": [
+  {
+    "name": "blue",
+    "bg": "#1f6feb20",
+    "text": "#58a6ff",
+    "border": "#1f6feb"
+  },
+  {
+    "name": "green",
+    "bg": "#23863620",
+    "text": "#3fb950",
+    "border": "#238636"
+  },
+  {
+    "name": "yellow",
+    "bg": "#d2992220",
+    "text": "#d29922",
+    "border": "#9e6a03"
+  },
+  {
+    "name": "red",
+    "bg": "#da363320",
+    "text": "#f85149",
+    "border": "#da3633"
+  },
+  {
+    "name": "purple",
+    "bg": "#8957e520",
+    "text": "#a371f7",
+    "border": "#8957e5"
+  },
+  {
+    "name": "orange",
+    "bg": "#d1861620",
+    "text": "#f0883e",
+    "border": "#d18616"
+  },
+  {
+    "name": "pink",
+    "bg": "#db61a220",
+    "text": "#f778ba",
+    "border": "#db61a2"
+  },
+  {
+    "name": "gray",
+    "bg": "#8b949e20",
+    "text": "#9fa7b0",
+    "border": "#6e7681"
+  },
+  {
+    "name": "teal",
+    "bg": "#14b8a620",
+    "text": "#14b8a6",
+    "border": "#0d9488"
+  },
+  {
+    "name": "cyan",
+    "bg": "#06b6d420",
+    "text": "#06b6d4",
+    "border": "#0891b2"
+  },
+  {
+    "name": "indigo",
+    "bg": "#6366f120",
+    "text": "#818cf8",
+    "border": "#6366f1"
+  },
+  {
+    "name": "lavender",
+    "bg": "#a78bfa20",
+    "text": "#a78bfa",
+    "border": "#8b5cf6"
+  },
+  {
+    "name": "mint",
+    "bg": "#10b98120",
+    "text": "#34d399",
+    "border": "#10b981"
+  },
+  {
+    "name": "coral",
+    "bg": "#f4735820",
+    "text": "#f87171",
+    "border": "#ef4444"
+  },
+  {
+    "name": "amber",
+    "bg": "#f59e0b20",
+    "text": "#fbbf24",
+    "border": "#f59e0b"
+  },
+  {
+    "name": "sky",
+    "bg": "#0ea5e920",
+    "text": "#38bdf8",
+    "border": "#0ea5e9"
+  },
+  {
+    "name": "rose",
+    "bg": "#f4388920",
+    "text": "#fb7185",
+    "border": "#f43f5e"
+  },
+  {
+    "name": "lime",
+    "bg": "#84cc1620",
+    "text": "#a3e635",
+    "border": "#84cc16"
+  }
+]
+}
