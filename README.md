@@ -19,8 +19,8 @@ Organize bookmarks with categories and tags. Replace your new tab with something
 
 ## Install
 
-- **Chrome/Edge/Brave:** [Chrome Web Store](#) (add link when published)
-- **Firefox:** [Firefox Add-ons](#) (add link when published)
+- **Chrome/Edge/Brave:** [Chrome Web Store](#) *(coming soon)*
+- **Firefox:** [Firefox Add-ons](#) *(coming soon)*
 - **Manual:** Download from [Releases](https://github.com/onemli/cortex/releases)
 
 ## How to use
