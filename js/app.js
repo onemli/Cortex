@@ -452,10 +452,36 @@ function CortexApp() {
     }
   };
 
-  const handleSaveBookmark = (categoryId) => {
-    if (!bookmarkForm.title || !bookmarkForm.url) return;
+const handleSaveBookmark = (categoryId) => {
+  if (!bookmarkForm.title || !bookmarkForm.url) return;
 
-    if (editingBookmark) {
+  if (editingBookmark) {
+    // Is category changed?
+    if (editingBookmark.categoryId !== categoryId) {
+      // Delete from old category and add to new category
+      setCategories(prev => prev.map(cat => {
+        if (cat.id === editingBookmark.categoryId) {
+          // Delete from old category
+          return {
+            ...cat,
+            bookmarks: cat.bookmarks.filter(b => b.id !== editingBookmark.id)
+          };
+        } else if (cat.id === categoryId) {
+          // Add to new category
+          return {
+            ...cat,
+            bookmarks: [...cat.bookmarks, { 
+              id: editingBookmark.id, 
+              title: bookmarkForm.title, 
+              url: bookmarkForm.url, 
+              tags: bookmarkForm.tags 
+            }]
+          };
+        }
+        return cat;
+      }));
+    } else {
+      // Update existing bookmark in the same category
       setCategories(prev => prev.map(cat =>
         cat.id === categoryId
           ? {
@@ -468,18 +494,19 @@ function CortexApp() {
           }
           : cat
       ));
-    } else {
-      setCategories(prev => prev.map(cat =>
-        cat.id === categoryId
-          ? { ...cat, bookmarks: [...cat.bookmarks, { id: Date.now(), ...bookmarkForm }] }
-          : cat
-      ));
     }
+  } else {
+    setCategories(prev => prev.map(cat =>
+      cat.id === categoryId
+        ? { ...cat, bookmarks: [...cat.bookmarks, { id: Date.now(), ...bookmarkForm }] }
+        : cat
+    ));
+  }
 
-    setBookmarkForm({ title: '', url: '', tags: [] });
-    setShowBookmarkModal(null);
-    setEditingBookmark(null);
-  };
+  setBookmarkForm({ title: '', url: '', tags: [] });
+  setShowBookmarkModal(null);
+  setEditingBookmark(null);
+};
 
   const handleEditBookmark = (categoryId, bookmark) => {
     setEditingBookmark({ ...bookmark, categoryId });
