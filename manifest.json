@@ -1,0 +1,37 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Cortex - Find that one link.",
+  "short_name": "Cortex",
+  "version": "1.2.0",
+  "description": "Elevate your browsing with Cortex, the ultimate bookmark manager. Effortlessly organize links with categories and tags, customize your new tab with beautiful themes, and find anything instantly. Your perfect speed dial and bookmark organizer.",
+  "author": "Kerem Can ONEMLI",
+  "homepage_url": "https://github.com/onemli/cortex",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "contextMenus",
+    "bookmarks"
+  ],
+  "background": {
+    "service_worker": "./js/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cortex - Find that one link.",
+    "default_icon": {
+      "16": "./assets/icons/icon16.png",
+      "48": "./assets/icons/icon48.png",
+      "128": "./assets/icons/icon128.png"
+    }
+  },
+  "chrome_url_overrides": {
+    "newtab": "./newtab.html"
+  },
+  "icons": {
+    "16": "./assets/icons/icon16.png",
+    "48": "./assets/icons/icon48.png",
+    "128": "./assets/icons/icon128.png"
+  }
+
+}

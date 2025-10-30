@@ -1,0 +1,89 @@
++---assets
+¦   ¦   logo.svg
+¦   ¦   
+¦   +---icons
+¦   ¦   ¦   icon128.png
+¦   ¦   ¦   icon16.png
+¦   ¦   ¦   icon192.png
+¦   ¦   ¦   icon24.png
+¦   ¦   ¦   icon32.png
+¦   ¦   ¦   icon48.png
+¦   ¦   ¦   icon64.png
+¦   ¦   ¦   logo.svg
+¦   ¦   ¦   
+¦   ¦   +---dark
+¦   ¦   ¦       icon128.png
+¦   ¦   ¦       icon16.png
+¦   ¦   ¦       icon192.png
+¦   ¦   ¦       icon24.png
+¦   ¦   ¦       icon256.png
+¦   ¦   ¦       icon32.png
+¦   ¦   ¦       icon48.png
+¦   ¦   ¦       icon64.png
+¦   ¦   ¦       
+¦   ¦   ¦       
+¦   ¦   +---light
+¦   ¦           icon128.png
+¦   ¦           icon16.png
+¦   ¦           icon192.png
+¦   ¦           icon24.png
+¦   ¦           icon256.png
+¦   ¦           icon32.png
+¦   ¦           icon48.png
+¦   ¦           icon64.png
+¦   ¦           
+¦   +---libs
+¦       ¦   react-dom.development.js
+¦       ¦   react-dom.production.min.js
+¦       ¦   react.development.js
+¦       ¦   react.production.min.js
+¦       ¦   
+¦       +---fontawesome
+¦           +---css
+¦           ¦       all.css
+¦           ¦       
+¦           +---webfonts
+¦                   fa-brands-400.woff2
+¦                   fa-regular-400.woff2
+¦                   fa-solid-900.woff2
+¦                   fa-v4compatibility.woff2
+
+¦                   
++---config
+¦       locales.json
+¦       themes.json
+¦       
++---js
+¦   ¦   app.js
+¦   ¦   background.js
+¦   ¦   theme-preloader.js
+¦   ¦   
+¦   +---components
+¦   ¦       BookmarkCard.js
+¦   ¦       BookmarkModal.js
+¦   ¦       CategoryCard.js
+¦   ¦       CategoryManagement.js
+¦   ¦       ConfirmDialog copy.js
+¦   ¦       ConfirmDialog.js
+¦   ¦       Header.js
+¦   ¦       Icon.js
+¦   ¦       SettingsModal.js
+¦   ¦       TagManagement.js
+¦   ¦       ThemeCreator.js
+¦   ¦       
+¦   +---constants
+¦   ¦       index.js
+¦   ¦       
+¦   +---hooks
+¦   ¦       useCategories.js
+¦   ¦       useSettings.js
+¦   ¦       useTheme.js
+¦   ¦       
+¦   +---utils
+¦           browser.js
+¦           storage.js
+¦           theme.js
+¦           validation.js
+¦           
++---styles
+        main.css

@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   /* Font Scale Variables */
   --font-scale: 1;
   --font-xs: 10px;
@@ -9,6 +9,13 @@
   --font-xl: 16px;
   --font-2xl: 18px;
   --font-3xl: 20px;
+  
+  /* Tema değişkenleri - inline script tarafından override edilecek */
+  --bg: #0f1014;
+  --bg-secondary: #0d0e12;
+  --card: #111317;
+  --text: #b1b1b1;
+  --accent: #d7a156;
 }
 
 * {
@@ -17,103 +24,284 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
+  /* CSS variables kullan ki script override edebilsin */
+  background-color: var(--bg);
+  color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Flash'ı önlemek için transition KALDIR */
+  /* transition: none !important; */
 }
 
-/* Genel font boyutu sınıfları */
-.text-xs { font-size: var(--font-xs) !important; }
-.text-sm { font-size: var(--font-sm) !important; }
-.text-base { font-size: var(--font-base) !important; }
-.text-md { font-size: var(--font-md) !important; }
-.text-lg { font-size: var(--font-lg) !important; }
-.text-xl { font-size: var(--font-xl) !important; }
-.text-2xl { font-size: var(--font-2xl) !important; }
-.text-3xl { font-size: var(--font-3xl) !important; }
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+
+#root:empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+#root:empty::after {
+  content: 'Loading Cortex...';
+  color: var(--text);
+  font-size: 18px;
+  opacity: 0.7;
+}
+body.popup {
+  width: 800px !important;
+  min-width: 800px !important;
+  max-width: 800px !important;
+  height: 600px !important;
+  overflow: hidden;
+}
+
+body.popup #root {
+  width: 800px !important;
+  height: 600px !important;
+}
+/* ============================================
+   SETTINGS BUTTONS - Hover States
+   ============================================ */
+
+/* Genel button hover */
+button {
+  position: relative;
+  outline: none;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+button:active:not(:disabled) {
+  filter: brightness(0.95);
+  transform: scale(0.98);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Settings modal içindeki butonlar */
+.settings-button {
+  transition: all 0.2s ease;
+}
+
+.settings-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.settings-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Input fields hover */
+input[type="text"]:hover,
+input[type="url"]:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--border-hover) !important;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
+}
+
+/* ============================================
+   HOVER EFFECTS - 3 Modes: none, subtle, fancy
+   ============================================ */
+
+/* Base styles - ALWAYS apply */
+.bookmark-card,
+.category-card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  cursor: pointer;
+  position: relative;
+}
+
+/* ============================================
+   CATEGORY CARDS - ALWAYS Subtle (sabit)
+   ============================================ */
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  border-color: var(--border-hover) !important;
+}
+
+.category-card:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   BOOKMARK CARDS - 3 Modes
+   ============================================ */
+
+/* MODE 1: NONE - No hover effect */
+body.hover-none .bookmark-card:hover {
+  opacity: 0.95;
+}
+
+/* MODE 2: SUBTLE - Gri çerçeve + hafif lift */
+body.hover-subtle .bookmark-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  border-color: var(--border-hover) !important;
+}
+
+body.hover-subtle .bookmark-card:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+/* MODE 3: FANCY - Shimmer + Gradient + Glow */
+body.hover-fancy .bookmark-card {
+  overflow: hidden; /* Shimmer için gerekli */
+}
+
+body.hover-fancy .bookmark-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 
+    0 16px 32px rgba(0,0,0,0.3),
+    0 0 0 1px var(--accent);
+  border-color: var(--accent) !important;
+}
+
+body.hover-fancy .bookmark-card:active {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 
+    0 8px 16px rgba(0,0,0,0.25),
+    0 0 0 1px var(--accent);
+}
+
+/* Gradient overlay (fancy mode) */
+body.hover-fancy .bookmark-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: radial-gradient(
+    circle,
+    var(--accent) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.hover-fancy .bookmark-card:hover::before {
+  opacity: 0.15;
+}
+
+/* Shimmer effect (fancy mode) */
+@keyframes shimmer {
+  0% { 
+    transform: translateX(-100%) rotate(45deg); 
+  }
+  100% { 
+    transform: translateX(200%) rotate(45deg); 
+  }
+}
+
+body.hover-fancy .bookmark-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  transform: translateX(-100%) rotate(45deg);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(50px);
+}
+
+body.hover-fancy .bookmark-card:hover::after {
+  animation: shimmer 0.9s ease-in-out;
+}
+
+/* Z-index fix - content üstte kalsın */
+body.hover-fancy .bookmark-card > * {
+  position: relative;
+  z-index: 2;
+}
+/* MODE 4: BORDER */
+body.hover-border .bookmark-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-color: var(--accent) !important;
+  border-width: 2px;
+}
+
+body.hover-border .bookmark-card:active {
+  transform: translateY(-1px);
+}
+/* Scrollbar styles - Modern & Minimal */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border, #33363e);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent, #d7a156);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--accent, #d7a156);
+}
+
+/* Firefox Scrollbar */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  #root {
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Popup specific styles */
-  body.popup {
-    width: 800px;
-    height: 600px;
-    overflow: hidden;
-  }
-  
-  /* Newtab specific styles */
-  body.newtab {
-    min-height: 100vh;
-  }
-  
-  /* Scrollbar styles */
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: var(--bg-secondary, #181b1f);
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: var(--border-hover, #33363e);
-    border-radius: 5px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--border, #3d4149);
-  }
-  
-  /* Transitions */
-  button,
-  input,
-  select {
-    transition: all 0.2s ease;
-  }
-  
-  /* Focus states */
-  input:focus,
-  select:focus,
-  button:focus {
-    outline: 2px solid var(--accent, #ff6b00);
-    outline-offset: 2px;
-  }
-  
-  /* Color input custom styling */
-  input[type="color"] {
-    width: 50px;
-    height: 35px;
-    border: 1px solid var(--border, #2c2d33);
-    border-radius: 6px;
-    cursor: pointer;
-    padding: 3px;
-  }
-  
-  input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
-  }
-  
-  input[type="color"]::-webkit-color-swatch {
-    border: none;
-    border-radius: 4px;
-  }
+  scrollbar-width: thin;
+  scrollbar-color: var(--border, #33363e) transparent;
+}
+
+*:hover {
+  scrollbar-color: var(--accent, #d7a156) transparent;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
